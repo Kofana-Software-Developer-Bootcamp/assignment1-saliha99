@@ -15,21 +15,16 @@
     <h1>Patika.dev Bootcamp Başvuru Formu</h1>
     <br>
     <div>
-        <form onsubmit="return getInfo()">
+        <form id="form" onsubmit="return getInfo()">
+            <br>
             <label>İsim - Soyisim:</label><br>
-            <input type="text" id="fname"><br>
-
-    <br>
+            <input type="text" id="fname" required><br><br>
 
             <label>Telefon Numarası:</label><br>
-            <input type="text" id="tel"><br>
-
-    <br>
+            <input type="text" id="tel" required><br><br>
 
             <label>Mail Adresi:</label><br>
-            <input type="email" id="email"><br><br>
-
-    <br>
+            <input type="email" id="email" required><br><br>
 
             <label>Eğitim Durumu:</label><br>
             <select name="durum" id="egitim">
@@ -39,7 +34,7 @@
               <option value="Yüksek Lisans">Yüksek Lisans</option>
             </select>
             <br><br>
-    <br>
+
             <label>Cinsiyet:</label><br>
             <select name="durum" id="gender">
               <option value="Kadın">Kadın</option>
@@ -48,16 +43,16 @@
               <option value="Diğer">Diğer</option>
             </select>
             <br><br>
-        
-    <br>    
+  
             <p>Hangi alanda çalışmak istersiniz?</p>
-            <input class="messageCheckbox" type="checkbox" value="Front-end Developer" name="alanad">
+            <input class="messageCheckbox" type="checkbox" value="Front-end Developer" name="alanad" checked>
             <label>Front-end Developer (Javascript, React, Angular)</label><br>
             <input class="messageCheckbox" type="checkbox" value="Back-end Developer" name="alanad">
             <label>Back-end Developer (Java, .NET, PHP, Node.js)</label><br>
             <input class="messageCheckbox" type="checkbox" value="Mobile Developer" name="alanad">
             <label>Mobile Developer (iOS, Android, React Native)</label><br><br>
-
+            <input type="submit" value="Gönder">
+        </form>
             <script type="text/javascript">
 
                 //To select a single option in the Checkbox
@@ -89,11 +84,10 @@
                     items.cinsiyet=cinsiyet
                     output.push({name:name,tel:tel,email:email,egitim,alan:alan,cinsiyet:cinsiyet})
                     console.table(output);
+                    document.getElementById("form").reset()
                     return false
                 }
             </script>
-                <input type="submit" value="Submit">
-        </form>
     <br><br>
 </body>
 </html>
